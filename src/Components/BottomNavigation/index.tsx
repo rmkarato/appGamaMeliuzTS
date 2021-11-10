@@ -6,6 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Home from '../../Screens/Home';
 import List from '../../Screens/List';
 import Contact from '../../Screens/Contact';
+import Details from '../../Screens/Details';
 
 const Tabs = createBottomTabNavigator();
 
@@ -30,6 +31,20 @@ const NavigationTabs = () => {
           tabBarIcon: () => (
             <MaterialCommunityIcons
               name="clipboard-list-outline"
+              color="#000"
+              size={30}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Detalhes"
+        component={Details}
+        options={{
+          tabBarLabel: 'Detalhes',
+          tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="information-outline"
               color="#000"
               size={30}
             />

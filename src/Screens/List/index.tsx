@@ -42,14 +42,17 @@ const List: React.FC = () => {
         {list.map(store => (
           <Marker
             key={store.id}
+            pinColor="purple"
             coordinate={{
               latitude: store.localization.lat,
               longitude: store.localization.lng,
             }}>
             <Callout onPress={handlePosition}>
-              <View>
+              <View style={styles.default}>
                 <Text>{store.label}</Text>
-                <Image source={{uri: store.logo}} />
+                <Text>
+                  <Image source={{uri: store.logo}} style={styles.logoStyle} />
+                </Text>
               </View>
             </Callout>
           </Marker>
@@ -68,6 +71,11 @@ const styles = StyleSheet.create({
   mapStyle: {
     height: '100%',
     width: '100%',
+  },
+  logoStyle: {
+    height: 50,
+    width: 50,
+    resizeMode: 'contain',
   },
 });
 

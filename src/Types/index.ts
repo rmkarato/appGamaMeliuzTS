@@ -20,3 +20,9 @@ export interface IList {
     state: string;
   };
 }
+
+export interface IStoreDetails {
+  store: number;
+  value: number;
+  expires_in: string;
+}
